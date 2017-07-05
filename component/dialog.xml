@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="{Long}450"
+    helpPath="en/cq/current/wcm/default_components.html#Title"
+    title="Connect with us"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <title
+                jcr:primaryType="cq:Panel"
+                title="Title">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <titledescription
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Title"
+                                name="./titledescription"
+                                xtype="richtext">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <edit
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <findreplace
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <styles jcr:primaryType="cq:WidgetCollection">
+                                            <hl2BigArticle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="hl2BigArticleStyle"
+                                                text="HL 2 big article"/>
+                                            <leadinOverline
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="leadinOverlineStyle"
+                                                text="Lead-in and Overline"/>
+                                            <overlineDate
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="overlineDateStyle"
+                                                text="Overline Date"/>
+                                            <copyArticle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="copyArticleStyle"
+                                                text="Copy Article"/>
+                                            <copyTable
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="copyTableStyle"
+                                                text="Copy Table"/>
+                                            <quoteStyle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="quoteStyle"
+                                                text="Quotes"/>
+                                            <smallPrint
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="smallPrintStyle"
+                                                text="Small Print"/>
+                                        </styles>
+                                    </styles>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <undo
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <htmlRules jcr:primaryType="nt:unstructured">
+                                    <blockHandling
+                                        jcr:primaryType="nt:unstructured"
+                                        removeSingleParagraphContainer="{Boolean}true"/>
+                                </htmlRules>
+                            </titledescription>
+                            <titleformobile
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Mobile View Title"
+                                name="./mobiletitle"
+                                xtype="richtext">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <edit
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <findreplace
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <styles jcr:primaryType="cq:WidgetCollection">
+                                            <hl2BigArticle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="hl2BigArticleStyle"
+                                                text="HL 2 big article"/>
+                                            <leadinOverline
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="leadinOverlineStyle"
+                                                text="Lead-in and Overline"/>
+                                            <overlineDate
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="overlineDateStyle"
+                                                text="Overline Date"/>
+                                            <copyArticle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="copyArticleStyle"
+                                                text="Copy Article"/>
+                                            <copyTable
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="copyTableStyle"
+                                                text="Copy Table"/>
+                                            <quoteStyle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="quoteStyle"
+                                                text="Quotes"/>
+                                            <smallPrint
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="smallPrintStyle"
+                                                text="Small Print"/>
+                                        </styles>
+                                    </styles>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <undo
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <htmlRules jcr:primaryType="nt:unstructured">
+                                    <blockHandling
+                                        jcr:primaryType="nt:unstructured"
+                                        removeSingleParagraphContainer="{Boolean}true"/>
+                                </htmlRules>
+                            </titleformobile>
+                        </items>
+                    </title>
+                </items>
+            </title>
+            <contactus
+                jcr:primaryType="cq:Panel"
+                title="Contact Us">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contactus
+                        jcr:primaryType="cq:Widget"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <contactustitle
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Contact Us Title"
+                                name="./contactustitle"
+                                xtype="richtext">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <edit
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <findreplace
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <styles jcr:primaryType="cq:WidgetCollection">
+                                            <hl2BigArticle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="hl2BigArticleStyle"
+                                                text="HL 2 big article"/>
+                                            <leadinOverline
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="leadinOverlineStyle"
+                                                text="Lead-in and Overline"/>
+                                            <overlineDate
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="overlineDateStyle"
+                                                text="Overline Date"/>
+                                            <copyArticle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="copyArticleStyle"
+                                                text="Copy Article"/>
+                                            <copyTable
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="copyTableStyle"
+                                                text="Copy Table"/>
+                                            <quoteStyle
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="quoteStyle"
+                                                text="Quotes"/>
+                                            <smallPrint
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="smallPrintStyle"
+                                                text="Small Print"/>
+                                        </styles>
+                                    </styles>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <undo
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <htmlRules jcr:primaryType="nt:unstructured">
+                                    <blockHandling
+                                        jcr:primaryType="nt:unstructured"
+                                        removeSingleParagraphContainer="{Boolean}true"/>
+                                </htmlRules>
+                            </contactustitle>
+                            <ccnumber
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Call Center Number"
+                                name="./ccnumber"
+                                xtype="textfield"/>
+                        </items>
+                    </contactus>
+                </items>
+            </contactus>
+          
+        </items>
+    </items>
+</jcr:root>
