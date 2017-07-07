@@ -1,6 +1,6 @@
 .addressLookup {
   float: left;
-  margin-left: 30px;
+  margin-left: 40px;
   margin-top: 6px;
   width: 88%; }
 
@@ -30,11 +30,10 @@
 .addressLookup input.form-control[name="zip"] {
   width: 12% !important; }
 
-.addressLookup .btn.btn-default {
+.addressLookup > .btn.btn-default {
   float: left;
   font-size: 14px;
   line-height: 31px;
-  margin-left: 7px;
   padding: 4px 10px; }
 
 .custom-select {
@@ -68,6 +67,15 @@
   right: 6px;
   top: 8px;
   font-weight: bold; }
+
+.addressLookup input::-webkit-input-placeholder,
+.addressLookup input::-moz-placeholder,
+.addressLookup input:-ms-input-placeholder,
+.addressLookup input:-moz-placeholder {
+  color: pink; }
+
+.addressLookup .required {
+  border: 1px solid red; }
 
 .order-msg {
   color: #fff;

@@ -1,13 +1,13 @@
 <div class="addressLookup ">
-  <input class="form-control" id="street" name="street" type="text" value="street address">
-  <input class="form-control" id="apt" name="apt" type="text" value="apt">
-  <input class="form-control" id="city" name="city" type="text" value="city">
+  <input class="form-control" id="street" name="street" type="text" placeholder="street address *">
+  <input class="form-control" id="apt" name="apt" type="text" placeholder="apt">
+  <input class="form-control" id="city" name="city" type="text" placeholder="city">
   <div class="dropdown">
     <select id = "state" class="form-control custom-select"><option>state</option><option value="CT">CT</option><option value="NJ">NJ</option><option value="NY">NY</option></select>
     <div class="select__arrow glyph glyph-angle-down "></div>
   </div>
-  <input class="form-control" id="zip" name="zip" type="text" value="zip code">
-  <a role="button" target="blank" href="https://order.optimum.com" class="btn btn-default btn-icon-text" data-event="omtr" data-omtr="true">Start shopping<span class="glyph glyph-angle-right "></span></a>
+  <input class="form-control" id="zip" name="zip" type="text" placeholder="zip code *">
+  <a role="button" target="blank" href="https://order.optimum.com/Buyflow/Storefront" class="btn btn-default btn-icon-text" data-event="omtr" data-omtr="true">Start shopping<span class="glyph glyph-angle-right "></span></a>
 </div>
 <script>
 function QuickAddress(elements, btn){
@@ -15,34 +15,93 @@ function QuickAddress(elements, btn){
   this.btn = btn;
   this.destination = btn.getAttribute('href');
   this.ids = {};
+  //http://order.optimum.com/Buyflow/Storefront?add1=123%20Main%20St&add2=Apt%2027&zip=11714
 
   this.returnElements = function(){
       for(var i = 0; i < this.elements.length; i++){
         var prop = this.elements[i].getAttribute('id');
         this.ids[prop] = document.getElementById(prop);
       }
+    /*  var el;
+      for (el in this.ids) {
+        if(this.ids[el].getAttribute('type') === "text"){
+          this.ids[el].addEventListener('focus', function(e){
+                e.target.value = "";
+          });
+          this.ids[el].addEventListener('blur', function(){
+              if(this.value == "") {
+                this.value = this.getAttribute('value');
+              }
+          })
+        }
+      } */
       return this.ids;
   }.bind(this);
+
+  this.checkRequired = function (){
+    return function(els){
+      var required = false;
+      for(var i = 0; i < els.length; i++){
+        if(els[i].value == "") {
+          els[i].classList.add('required');
+          required = true;
+        }
+      }
+      if(required) return true;
+    }
+}
 
   this.preventClick = function(event){
         event.preventDefault();
     }
+}
+(function () {
+  var form = document.querySelector(".addressLookup"),
+      formEls = form.querySelectorAll(".form-control"),
+      btn = form.querySelector(".btn"),
+      addressLookup = new QuickAddress(formEls, btn),
+      fields = addressLookup.returnElements();
+
+      fields.street.required = true;
+      fields.zip.required = true;
+
+addressLookup.btn.onclick = function(e){
+  addressLookup.preventClick(e);
+  var required = addressLookup.checkRequired()([fields.street, fields.zip]);
+  if( required  ){
+    //console.log("Error")
+  }
+  else {
+      addressLookup.destination += "?add1=" + fields.street.value;
+
+      if(fields.apt.value !== ""){
+          addressLookup.destination += "&add2=" + fields.apt.value;
+      }
+
+      addressLookup.destination += "&zip=" + fields.zip.value;
+
+      //window.location = addressLookup.destination;
+      window.open(addressLookup.destination, "_blank");
+      console.log(addressLookup.destination)
+  }
+
+/*  if( fields.street.value !== fields.street.getAttribute('value') ){
+      addressLookup.destination += "?add1=" + fields.street.value;
+
+      if( fields.apt.value !== fields.apt.getAttribute('value') ){
+          addressLookup.destination += "&add2=" + fields.apt.value;
+      }
+
+      if( fields.zip.value !== fields.zip.getAttribute('value') ){
+          addressLookup.destination += "&zip=" + fields.zip.value;
+      }
+  }*/
 
 }
-var form = document.querySelector(".addressLookup"),
-    formEls = form.querySelectorAll(".form-control"),
-    btn = form.querySelector(".btn"),
-    addressLookup = new QuickAddress(formEls, btn),
-    fields = addressLookup.returnElements();
+
+}())
 
 
-  (function () {
-
-  }())
-addressLookup.btn.onclick = function(e){
-      //addressLookup.preventClick(e);
-      console.log(this);
-  }
 </script>
 <style>
 .addressLookup {
@@ -115,6 +174,15 @@ addressLookup.btn.onclick = function(e){
   top: 8px;
   font-weight: bold;
 }
+.addressLookup input::-webkit-input-placeholder,
+.addressLookup input::-moz-placeholder,
+.addressLookup input:-ms-input-placeholder,
+.addressLookup input:-moz-placeholder  {
+  color: pink;
+}
+.addressLookup .required{
+  border: 1px solid red;
+}
 .order-msg {
   color: #fff;
   float: left;
@@ -135,5 +203,4 @@ addressLookup.btn.onclick = function(e){
 .footer-float-right.phone-number{
   margin-top: 16px;
 }
-
 </style>
