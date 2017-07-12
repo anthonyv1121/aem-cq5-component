@@ -7,13 +7,13 @@
     <div class="select__arrow glyph glyph-angle-down "></div>
   </div>
   <input class="form-control" id="zip" name="zip" type="text" placeholder="zip code *">
-  <a role="button" target="blank" href="https://order.optimum.com/Buyflow/Storefront" class="btn btn-default btn-icon-text" data-event="omtr" data-omtr="true">Start shopping<span class="glyph glyph-angle-right "></span></a>
+  <a role="button" target="blank" href="#" class="btn btn-default btn-icon-text" data-event="omtr" data-omtr="true">Start shopping<span class="glyph glyph-angle-right "></span></a>
 </div>
 <script>
 function QuickAddress(elements, btn){
   this.elements = elements;
   this.btn = btn;
-  this.destination = btn.getAttribute('href');
+  this.destination = btn.getAttribute('href'); // URL must be supplied in HTML
   this.ids = {};
 
   this.returnElements = function(){
@@ -21,19 +21,21 @@ function QuickAddress(elements, btn){
         var prop = this.elements[i].getAttribute('id');
         this.ids[prop] = document.getElementById(prop);
       }
-    /*  var el;
+     var el;
       for (el in this.ids) {
         if(this.ids[el].getAttribute('type') === "text"){
-          this.ids[el].addEventListener('focus', function(e){
-                e.target.value = "";
+          this.ids[el].addEventListener('keydown', function(e){
+                if(e.target.classList.contains("required")){
+                  e.target.classList.remove("required")
+                }
           });
-          this.ids[el].addEventListener('blur', function(){
+        /*  this.ids[el].addEventListener('blur', function(){
               if(this.value == "") {
                 this.value = this.getAttribute('value');
               }
-          })
+          })*/
         }
-      } */
+      }
       return this.ids;
   }.bind(this);
 
@@ -84,19 +86,8 @@ addressLookup.btn.onclick = function(e){
       console.log(addressLookup.destination)
   }
 
-/*  if( fields.street.value !== fields.street.getAttribute('value') ){
-      addressLookup.destination += "?add1=" + fields.street.value;
-
-      if( fields.apt.value !== fields.apt.getAttribute('value') ){
-          addressLookup.destination += "&add2=" + fields.apt.value;
-      }
-
-      if( fields.zip.value !== fields.zip.getAttribute('value') ){
-          addressLookup.destination += "&zip=" + fields.zip.value;
-      }
-  }*/
-
 }
+
 
 }())
 
@@ -180,7 +171,7 @@ addressLookup.btn.onclick = function(e){
   color: pink;
 }
 .addressLookup .required{
-  border: 1px solid red;
+  border: 2px solid red;
 }
 .order-msg {
   color: #fff;
